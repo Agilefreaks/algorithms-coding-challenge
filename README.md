@@ -9,6 +9,13 @@ Write a method that takes an array of consecutive (increasing) letters as input 
 You will always get a valid array. And it will be always exactly one letter be missing. 
 The length of the array will always be at least 2. The array will always contain letters in only one case.
 
+```
+["a","b","c","d","f"] -> "e"
+["O","Q","R","S"] -> "P"
+```
+
+(Use the English alphabet with 26 letters!)
+
 ## Problem 3
 
 Jenny and Stephanie are friends. Both of them like letters, especially uppercase ones.  
