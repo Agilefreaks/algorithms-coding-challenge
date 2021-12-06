@@ -1,0 +1,147 @@
+
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+
+
+using namespace std;
+//prob 1
+//Given an integer array of size N, compute the sum of all even numbers in this array
+int sum(int v[], int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        if (v[i] % 2 == 0) {
+            sum += v[i];
+        }
+
+    }
+    return sum;
+}
+//prob 2
+//Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+//You will always get a valid array.And it will be always exactly one letter be missing.The length of the array will always be at least 2. 
+//The array will always contain letters in only one case.
+
+int  missingLetter(char s[])
+{
+    s[0] = 'a';
+    int x = (int)s[0];
+
+
+    x = x + 1;
+
+
+    for (int i = 1; i < strlen(s); i++)
+    {
+        if (x != s[i])
+            return x;
+        else
+        {
+            x = x + 1;
+        }
+    }
+
+}
+
+int  missinguppercase(char s1[])
+{
+    s1[0] = 'A';
+    int x = (int)s1[0];
+
+
+    x = x + 1;
+
+
+    for (int i = 1; i < strlen(s1); i++)
+    {
+        if (x != s1[i])
+            return x;
+        else
+        {
+            x = x + 1;
+        }
+    }
+
+}
+//prob 3
+//Jenny and Stephanie are friends. Both of them like letters, especially uppercase ones.
+//They are cutting uppercase letters from newspapers, and each one of them has his collection of letters stored in a stack.
+//One sunny day, Rachel visited Jenny and Stephanie. She saw their collections. She wondered what is the lexicographically minimal string made of those two collections.
+//She can take a letter from a collection only when it is on the top of the stack. Rachel wants to use all of the letters in their collections.
+
+const int LIM = 100;
+
+void push(int stiva[], int& k, int numar) {
+    k = k + 1;
+    stiva[k] = numar;
+}
+int peek(int stiva[], int k) {
+    return stiva[k];
+}
+int pop(int stiva[], int& k) {
+    int rezultat = peek(stiva, k);
+    k = k -1;
+    return rezultat;
+}
+
+
+int lexicographically_minimal_string(int stack1[], int stack2[], int& k1, int& k2)
+{
+   
+}
+
+
+int main()
+{
+
+
+
+    int n = 6;
+    int v[] = { 1,2,3,4,5,6 };
+    cout << " Sum of all even numbers = " << sum(v, n);
+    cout << endl;
+
+    char s[28] = { 'a','b','c','d','e','g','\0' };
+    int y = missingLetter(s);
+    cout << y << endl;
+    //itoa(y, s, 16);
+
+
+    char s1[28] = { 'O','Q','R','S','\0' };
+    int y1 = missinguppercase(s1);
+    cout << y1 << endl;
+
+    int stack1[LIM], stack2[LIM], k1 = 0, k2 = 0;
+   // char a1[30] = { 'A','B','C','\0' };
+    //char a2[30] = { 'B','C','F','\0' };
+
+    
+    
+    
+    push(stack1, k1, 'A');
+    push(stack1, k1, 'B');
+    push(stack1, k1, 'C');
+
+    cout << pop(stack1, k1) << ' ';
+    cout << pop(stack1, k1) << ' ';
+    cout << pop(stack1, k1) << ' ';
+    cout << endl;
+
+    push(stack2, k2, 'B');
+    push(stack2, k2, 'C');
+    push(stack2, k2, 'F');
+
+
+
+
+    cout << pop(stack2, k2) << ' ';
+    cout << pop(stack2, k2) << ' ';
+    cout << pop(stack2, k2) << ' ';
+
+    
+
+
+   // lexicographically_minimal_string(stack1, stack2, k1, k2);
+
+}
