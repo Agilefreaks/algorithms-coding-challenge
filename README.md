@@ -33,6 +33,6 @@ As an example, assume Jenny has collected ```a = [A, C, A]``` and Stephanie has 
 | CA  | BCF  | A |
 | CA	|	CF	|	AB |
 | A		|  CF		|	ABC |
-| A		|  CF		|	ABCA |
+| 		|  CF		|	ABCA |
 |     |	F			|  ABCAC |
 | 		|    		|  ABCACF |
