@@ -18,16 +18,10 @@ TEST(Test_Missing_Character, Test2) {
 
 char missingCharacter(char charVector[])
 {
-	//Convert Vector
 	int length = strlen(charVector);
-	int* intVector;
-	intVector = new int[length];
-	for (int index = 0; index < length; index++)
-		intVector[index] = charVector[index];
-	//Compare Vector
 	for (int index = 0; index < length - 1; index++) {
-		if (intVector[index + 1] != intVector[index] + 1) {
-			return (char)(intVector[index] + 1);
+		if ((int)charVector[index + 1] != (int)charVector[index] + 1) {
+			return (char)((int)charVector[index] + 1);
 		}
 	}
 }
