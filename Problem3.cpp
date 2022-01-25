@@ -17,32 +17,32 @@ TEST(Lexicographically_Minimal_String, Test3) {
 	EXPECT_EQ(lexicographicallyMinimalString("adfrdsfacascfa", "aszczasr"), "aadfrdsfacascfaszczasr");
 }
 
-string lexicographicallyMinimalString(string j, string s) {
+string lexicographicallyMinimalString(string jennyStack, string stephanieStack) {
 	string result = "";
-	int l1 = j.length();
-	int l2 = s.length();
-	int t1 = 0, t2 = 0;
+	int jennyStackLength = jennyStack.length();
+	int stephanieStackLength = stephanieStack.length();
+	int currentIndex1 = 0, currentIndex2 = 0;
 	result = "";
-	while (t1 < l1 && t2 < l2) {
-		if (j[t1] != s[t2])
+	while (currentIndex1 < jennyStackLength && currentIndex2 < stephanieStackLength) {
+		if (jennyStack[currentIndex1] != stephanieStack[currentIndex2])
 		{
-			if (j[t1] < s[t2]) result += j[t1++];
-			else result += s[t2++];
+			if (jennyStack[currentIndex1] < stephanieStack[currentIndex2]) result += jennyStack[currentIndex1++];
+			else result += stephanieStack[currentIndex2++];
 		}
-		if (j[t1] == s[t2])
+		if (jennyStack[currentIndex1] == stephanieStack[currentIndex2])
 		{
-			int ct = 0;
-			while (j[t1 + ct] == s[t2 + ct])
+			int counter = 0;
+			while (jennyStack[currentIndex1 + counter] == stephanieStack[currentIndex2 + counter])
 			{
-				ct++;
+				counter++;
 			}
-			if (j[t1 + ct] < s[t2 + ct])
-				result += j[t1++];
+			if (jennyStack[currentIndex1 + counter] < stephanieStack[currentIndex2 + counter])
+				result += jennyStack[currentIndex1++];
 			else
-				result += j[t2++];
+				result += stephanieStack[currentIndex2++];
 		}
 	}
-	while (t1 < l1) result += j[t1++];
-	while (t2 < l2) result += s[t2++];
+	while (currentIndex1 < jennyStackLength) result += jennyStack[currentIndex1++];
+	while (currentIndex2 < stephanieStackLength) result += stephanieStack[currentIndex2++];
 	return result;
 }
