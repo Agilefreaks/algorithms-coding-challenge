@@ -3,20 +3,6 @@
 
 using namespace std;
 
-string lexicographicallyMinimalString(string, string);
-
-TEST(Lexicographically_Minimal_String, Test1) {
-	EXPECT_EQ(lexicographicallyMinimalString("ACA", "BCF"), "ABCACF");
-}
-
-TEST(Lexicographically_Minimal_String, Test2) {
-	EXPECT_EQ(lexicographicallyMinimalString("acaccczzxxrcv", "bcaccczzxxrca"), "abcacacccccczzxxrcazzxxrcv");
-}
-
-TEST(Lexicographically_Minimal_String, Test3) {
-	EXPECT_EQ(lexicographicallyMinimalString("adfrdsfacascfa", "aszczasr"), "aadfrdsfacascfaszczasr");
-}
-
 string lexicographicallyMinimalString(string jennyStack, string stephanieStack) {
 	string result = "";
 	int jennyStackLength = jennyStack.length();
